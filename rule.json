@@ -607,8 +607,10 @@
         {
           "rule_set":  [
             "youtube",
-            "telegram",
-            "netflix",
+            "telegram-site",
+            "telegram-ip",
+            "netflix-site",
+            "netflix-ip",
             "tiktok",
             "pornhub",
             "GEOLOCATION-!CN"
