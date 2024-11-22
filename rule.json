@@ -386,6 +386,13 @@
           "download_detour": "🎯 全球直连"
         },
         {
+          "tag": "spotify",
+          "type": "remote",
+          "format": "binary",
+          "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/spotify.srs",
+          "download_detour": "🎯 全球直连"
+        },
+        {
           "tag": "telegram-site",
           "type": "remote",
           "format": "binary",
