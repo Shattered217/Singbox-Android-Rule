@@ -592,14 +592,15 @@
         },
         {
           "rule_set":  [
-            "YouTube",
-            "Telegram",
-            "Netflix",
+            "youtube",
+            "telegram",
+            "netflix",
+            "tiktok",
+            "pornhub",
             "geoip-google",
             "geoip-telegram",
             "geoip-twitter",
-            "GEOLOCATION-!CN",
-            "geoip-netflix"
+            "GEOLOCATION-!CN"
           ],
           "server": "remote-dns"
         }
