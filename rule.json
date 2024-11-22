@@ -42,7 +42,7 @@
         "tag": "🚀 节点选择",
         "type": "selector",
         "outbounds": [
-          "🎈 自动选择",
+          "♻️ 自动选择",
           "✈️ 手动选择",
           "🛩️ 手动选择备用",
           "🚁 自建节点",
@@ -79,18 +79,18 @@
       ]
       },
       {
-        "tag": "ProxyDNS",
+        "tag": "🔗 ProxyDNS",
         "type": "selector",
         "outbounds": [
           "🎯 全球直连",
-          "🎈 自动选择",
+          "♻️ 自动选择",
           "✈️ 手动选择",
           "🛩️ 手动选择备用",
           "🚁 自建节点"
         ]
       },
       {
-        "tag": "Speedtest",
+        "tag": "⚡ Speedtest",
         "type": "selector",
         "outbounds": [
           "🎯 全球直连",
@@ -98,7 +98,7 @@
         ]
       },
       {
-        "tag": "ChatGPT",
+        "tag": "🤖 ChatGPT",
         "type": "selector",
         "outbounds": [
           "{all}"
@@ -113,7 +113,18 @@
       ]
       },
       {
-        "tag": "Github",
+        "tag": "📢 谷歌FCM",
+        "type": "selector",
+        "outbounds": [
+          "🎯 全球直连",          
+          "🚀 节点选择",
+          "✈️ 手动选择",
+          "🛩️ 手动选择备用",
+          "🚁 自建节点"
+        ]
+      },
+      {
+        "tag": "👩‍💻 Github",
         "type": "selector",
         "outbounds": [
           "🚀 节点选择",
@@ -124,7 +135,7 @@
         ]
       },
       {
-        "tag": "Pornhub",
+        "tag": "🥵 Pornhub",
         "type": "selector",
         "outbounds": [
           "🚀 节点选择",
@@ -143,7 +154,7 @@
       ]
       },
       {
-        "tag": "Bilibili",
+        "tag": "📺 Bilibili",
         "type": "selector",
         "outbounds": [
           "🎯 全球直连",
@@ -159,7 +170,7 @@
       ]
       },
       {
-        "tag": "TikTok",
+        "tag": "🎶 TikTok",
         "type": "selector",
         "outbounds": [
           "🚀 节点选择",
@@ -169,7 +180,7 @@
         ]
       },
       {
-        "tag": "Netflix",
+        "tag": "📺 Netflix",
         "type": "selector",
         "outbounds": [
           "🚀 节点选择",
@@ -179,7 +190,7 @@
         ]
       },
       {
-        "tag": "YouTube",
+        "tag": "📺 YouTube",
         "type": "selector",
         "outbounds": [
           "🚀 节点选择",
@@ -189,28 +200,7 @@
         ]
       },
       {
-        "tag": "Spotify",
-        "type": "selector",
-        "outbounds": [
-          "🎯 全球直连",
-          "🚀 节点选择",
-          "✈️ 手动选择",
-          "🛩️ 手动选择备用",
-          "🚁 自建节点"
-        ]
-      },
-      {
-        "tag": "Telegram",
-        "type": "selector",
-        "outbounds": [
-          "🚀 节点选择",
-          "✈️ 手动选择",
-          "🛩️ 手动选择备用",
-          "🚁 自建节点"
-        ]
-      },
-      {
-        "tag": "Bing",
+        "tag": "🎵 Spotify",
         "type": "selector",
         "outbounds": [
           "🎯 全球直连",
@@ -221,7 +211,17 @@
         ]
       },
       {
-        "tag": "Onedrive",
+        "tag": "📲 Telegram",
+        "type": "selector",
+        "outbounds": [
+          "🚀 节点选择",
+          "✈️ 手动选择",
+          "🛩️ 手动选择备用",
+          "🚁 自建节点"
+        ]
+      },
+      {
+        "tag": "Ⓜ️ Bing",
         "type": "selector",
         "outbounds": [
           "🎯 全球直连",
@@ -232,7 +232,18 @@
         ]
       },
       {
-        "tag": "微软服务",
+        "tag": "Ⓜ️ Onedrive",
+        "type": "selector",
+        "outbounds": [
+          "🎯 全球直连",
+          "🚀 节点选择",
+          "✈️ 手动选择",
+          "🛩️ 手动选择备用",
+          "🚁 自建节点"
+        ]
+      },
+      {
+        "tag": "Ⓜ️ 微软服务",
         "type": "selector",
         "outbounds": [
           "🚀 节点选择",
@@ -243,7 +254,7 @@
         ]
       },
       {
-        "tag": "Steam",
+        "tag": "🎮 Steam",
         "type": "selector",
         "outbounds": [
           "🎯 全球直连",
@@ -254,7 +265,7 @@
         ]
       },
       {
-        "tag": "🎈 自动选择",
+        "tag": "♻️ 自动选择",
         "type": "urltest",
         "outbounds": [
           "direct"
@@ -294,7 +305,7 @@
           "direct",
           "block",
           "🚀 节点选择",
-          "🎈 自动选择",
+          "♻️ 自动选择",
           "🎯 全球直连",
           "🛑 全球拦截",
           "🐟 漏网之鱼"
@@ -428,6 +439,13 @@
           "download_detour": "🎯 全球直连"
         },
         {
+          "tag": "fcm",
+          "type": "remote",
+          "format": "binary",
+          "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/googlefcm.srs",
+          "download_detour": "🎯 全球直连"
+        },
+        {
           "tag": "GEOIP-CN",
           "type": "remote",
           "format": "binary",
@@ -464,60 +482,64 @@
           "outbound": "GLOBAL"
         },
         {
+          "rule_set": "fcm",
+          "outbound": "📢 谷歌FCM"
+        },
+        {
           "rule_set": "speedtest",
-          "outbound": "Speedtest"
+          "outbound": "⚡ Speedtest"
         },
         {
           "rule_set": "chatgpt",
-          "outbound": "ChatGPT"
+          "outbound": "🤖 ChatGPT"
         },
         {
           "rule_set": "github",
-          "outbound": "Github"
+          "outbound": "👩‍💻 Github"
         },
         {
           "rule_set": "pornhub",
-          "outbound": "Pornhub"
+          "outbound": "🥵 Pornhub"
         },
         {
           "rule_set": "bilibili",
-          "outbound": "Bilibili"
+          "outbound": "📺 Bilibili"
         },
         {
           "rule_set": "tiktok",
-          "outbound": "TikTok"
+          "outbound": "🎶 TikTok"
         },
         {
           "rule_set": ["netflix-site", "netflix-ip"],
-          "outbound": "Netflix"
+          "outbound": "📺 Netflix"
         },
         {
           "rule_set": "youtube",
-          "outbound": "YouTube"
+          "outbound": "📺 YouTube"
         },
         {
           "rule_set": "spotify",
-          "outbound": "Spotify"
+          "outbound": "🎵 Spotify"
         },
         {
           "rule_set": ["telegram-site", "telegram-ip"],
-          "outbound": "Telegram"
+          "outbound": "📲 Telegram"
         },
         {
           "rule_set": "bing",
-          "outbound": "Bing"
+          "outbound": "Ⓜ️ Bing"
         },
         {
           "rule_set": "onedrive",
-          "outbound": "Onedrive"
+          "outbound": "Ⓜ️ Onedrive"
         },
         {
           "rule_set": "microsoft",
-          "outbound": "微软服务"
+          "outbound": "Ⓜ️ 微软服务"
         },
         {
           "rule_set": "steam",
-          "outbound": "Steam"
+          "outbound": "🎮 Steam"
         },
         {
           "ip_is_private": true,
