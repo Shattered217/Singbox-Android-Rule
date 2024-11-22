@@ -597,9 +597,6 @@
             "netflix",
             "tiktok",
             "pornhub",
-            "geoip-google",
-            "geoip-telegram",
-            "geoip-twitter",
             "GEOLOCATION-!CN"
           ],
           "server": "remote-dns"
