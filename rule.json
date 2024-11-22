@@ -316,123 +316,109 @@
     "route": {
       "rule_set": [
         {
-            "tag": "proxydns-site",
-            "type": "remote",
-            "format": "source",
-            "url": "https://github.com/Shattered217/ownrule-clash/raw/refs/heads/main/dns-site.json",
-            "download_detour": "🚀 节点选择"
-        },
-        {
-          "tag": "proxydns-ip",
-          "type": "remote",
-          "format": "source",
-          "url": "https://github.com/Shattered217/ownrule-clash/raw/refs/heads/main/dns-ip.json",
-          "download_detour": "🚀 节点选择"
-        },
-        {
           "tag": "netflix-site",
           "type": "remote",
           "format": "binary",
-          "url": "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/sing/geo/geosite/netflix.srs",
-          "download_detour": "🚀 节点选择"
+          "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/netflix.srs",
+          "download_detour": "🎯 全球直连"
         },
         {
             "tag": "netflix-ip",
             "type": "remote",
             "format": "binary",
-            "url": "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/sing/geo/geoip/netflix.srs",
-            "download_detour": "🚀 节点选择"
+            "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geoip/netflix.srs",
+            "download_detour": "🎯 全球直连"
         },
         {
             "tag": "speedtest",
             "type": "remote",
             "format": "binary",
-            "url": "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/sing/geo/geosite/speedtest.mrs",
-            "download_detour": "🚀 节点选择"
+            "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/speedtest.mrs",
+            "download_detour": "🎯 全球直连"
         },
         {
           "tag": "chatgpt",
           "type": "remote",
           "format": "binary",
-          "url": "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/sing/geo/geosite/openai.srs",
-          "download_detour": "🚀 节点选择"
+          "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/openai.srs",
+          "download_detour": "🎯 全球直连"
         },
         {
           "tag": "github",
           "type": "remote",
           "format": "binary",
-          "url": "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/sing/geo/geosite/github.mrs",
-          "download_detour": "🚀 节点选择"
+          "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/github.mrs",
+          "download_detour": "🎯 全球直连"
         },
         {
           "tag": "bing",
           "type": "remote",
           "format": "binary",
-          "url": "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/sing/geo/geosite/bing.mrs",
-          "download_detour": "🚀 节点选择"
+          "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/bing.mrs",
+          "download_detour": "🎯 全球直连"
         },
         {
           "tag": "onedrive",
           "type": "remote",
           "format": "binary",
-          "url": "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/sing/geo/geosite/onedrive.mrs",
-          "download_detour": "🚀 节点选择"
+          "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/onedrive.mrs",
+          "download_detour": "🎯 全球直连"
         },
         {
           "tag": "pornhub",
           "type": "remote",
           "format": "binary",
-          "url": "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/sing/geo/geosite/pornhub.mrs",
-          "download_detour": "🚀 节点选择"
+          "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/pornhub.mrs",
+          "download_detour": "🎯 全球直连"
         },
         {
           "tag": "microsoft",
           "type": "remote",
           "format": "binary",
-          "url": "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/sing/geo/geosite/microsoft.mrs",
-          "download_detour": "🚀 节点选择"
+          "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/microsoft.mrs",
+          "download_detour": "🎯 全球直连"
         },
         {
           "tag": "youtube",
           "type": "remote",
           "format": "binary",
-          "url": "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/sing/geo/geosite/youtube.mrs",
-          "download_detour": "🚀 节点选择"
+          "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/youtube.mrs",
+          "download_detour": "🎯 全球直连"
         },
         {
           "tag": "telegram-site",
           "type": "remote",
           "format": "binary",
-          "url": "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/sing/geo/geosite/telegram.mrs",
-          "download_detour": "🚀 节点选择"
+          "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/telegram.mrs",
+          "download_detour": "🎯 全球直连"
         },
         {
           "tag": "telegram-ip",
           "type": "remote",
           "format": "binary",
-          "url": "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/sing/geo/geoip/telegram.mrs",
-          "download_detour": "🚀 节点选择"
+          "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geoip/telegram.mrs",
+          "download_detour": "🎯 全球直连"
         },
         {
           "tag": "bilibili",
           "type": "remote",
           "format": "binary",
-          "url": "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/sing/geo/geosite/bilibili.mrs",
-          "download_detour": "🚀 节点选择"
+          "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/bilibili.mrs",
+          "download_detour": "🎯 全球直连"
         },
         {
           "tag": "tiktok",
           "type": "remote",
           "format": "binary",
-          "url": "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/sing/geo/geosite/tiktok.mrs",
-          "download_detour": "🚀 节点选择"
+          "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/tiktok.mrs",
+          "download_detour": "🎯 全球直连"
         },
         {
           "tag": "steam",
           "type": "remote",
           "format": "binary",
-          "url": "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/sing/geo/geosite/steam.srs",
-          "download_detour": "🚀 节点选择"
+          "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/steam.srs",
+          "download_detour": "🎯 全球直连"
         },
         {
           "tag": "GEOIP-CN",
@@ -469,10 +455,6 @@
         {
           "clash_mode": "global",
           "outbound": "GLOBAL"
-        },
-        {
-          "rule_set": ["proxydns-site", "proxydns-ip"],
-          "outbound": "ProxyDNS"
         },
         {
           "rule_set": "speedtest",
