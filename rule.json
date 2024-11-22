@@ -34,6 +34,8 @@
           }
         },
         "domain_strategy": "prefer_ipv4",
+        "tcp_multi_path": false,
+        "udp_fragment": true,
         "sniff": true
       }
     ],
@@ -330,7 +332,14 @@
           "download_detour": "🚀 节点选择"
         },
         {
-            "tag": "netflix",
+          "tag": "netflix-site",
+          "type": "remote",
+          "format": "binary",
+          "url": "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/sing/geo/geosite/netflix.srs",
+          "download_detour": "🚀 节点选择"
+        },
+        {
+            "tag": "netflix-ip",
             "type": "remote",
             "format": "binary",
             "url": "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/sing/geo/geoip/netflix.srs",
@@ -393,7 +402,14 @@
           "download_detour": "🚀 节点选择"
         },
         {
-          "tag": "telegram",
+          "tag": "telegram-site",
+          "type": "remote",
+          "format": "binary",
+          "url": "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/sing/geo/geosite/telegram.mrs",
+          "download_detour": "🚀 节点选择"
+        },
+        {
+          "tag": "telegram-ip",
           "type": "remote",
           "format": "binary",
           "url": "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/sing/geo/geoip/telegram.mrs",
@@ -485,7 +501,7 @@
           "outbound": "TikTok"
         },
         {
-          "rule_set": "netflix",
+          "rule_set": ["netflix-site", "netflix-ip"],
           "outbound": "Netflix"
         },
         {
@@ -497,7 +513,7 @@
           "outbound": "Spotify"
         },
         {
-          "rule_set": "telegram",
+          "rule_set": ["telegram-site", "telegram-ip"],
           "outbound": "Telegram"
         },
         {
