@@ -34,7 +34,6 @@
           }
         },
         "domain_strategy": "prefer_ipv4",
-        "tcp_fast_open": true,
         "tcp_multi_path": false,
         "udp_fragment": true,
         "sniff": true
