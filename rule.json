@@ -567,7 +567,7 @@
           "tag": "remote-dns",
           "address": "https://1.1.1.1/dns-query",
           "address_resolver": "remote-resolver-dns",
-          "detour": "ProxyDNS"
+          "detour": "🔗 ProxyDNS"
         },
         {
           "tag": "local-dns",
@@ -583,7 +583,7 @@
         {
           "tag": "remote-resolver-dns",
           "address": "8.8.8.8",
-          "detour": "ProxyDNS"
+          "detour": "🔗 ProxyDNS"
         },
         {
           "tag": "fakeip-dns",
