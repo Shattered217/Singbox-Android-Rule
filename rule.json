@@ -333,7 +333,7 @@
             "tag": "speedtest",
             "type": "remote",
             "format": "binary",
-            "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/speedtest.mrs",
+            "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/speedtest.srs",
             "download_detour": "🎯 全球直连"
         },
         {
@@ -347,70 +347,70 @@
           "tag": "github",
           "type": "remote",
           "format": "binary",
-          "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/github.mrs",
+          "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/github.srs",
           "download_detour": "🎯 全球直连"
         },
         {
           "tag": "bing",
           "type": "remote",
           "format": "binary",
-          "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/bing.mrs",
+          "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/bing.srs",
           "download_detour": "🎯 全球直连"
         },
         {
           "tag": "onedrive",
           "type": "remote",
           "format": "binary",
-          "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/onedrive.mrs",
+          "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/onedrive.srs",
           "download_detour": "🎯 全球直连"
         },
         {
           "tag": "pornhub",
           "type": "remote",
           "format": "binary",
-          "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/pornhub.mrs",
+          "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/pornhub.srs",
           "download_detour": "🎯 全球直连"
         },
         {
           "tag": "microsoft",
           "type": "remote",
           "format": "binary",
-          "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/microsoft.mrs",
+          "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/microsoft.srs",
           "download_detour": "🎯 全球直连"
         },
         {
           "tag": "youtube",
           "type": "remote",
           "format": "binary",
-          "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/youtube.mrs",
+          "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/youtube.srs",
           "download_detour": "🎯 全球直连"
         },
         {
           "tag": "telegram-site",
           "type": "remote",
           "format": "binary",
-          "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/telegram.mrs",
+          "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/telegram.srs",
           "download_detour": "🎯 全球直连"
         },
         {
           "tag": "telegram-ip",
           "type": "remote",
           "format": "binary",
-          "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geoip/telegram.mrs",
+          "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geoip/telegram.srs",
           "download_detour": "🎯 全球直连"
         },
         {
           "tag": "bilibili",
           "type": "remote",
           "format": "binary",
-          "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/bilibili.mrs",
+          "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/bilibili.srs",
           "download_detour": "🎯 全球直连"
         },
         {
           "tag": "tiktok",
           "type": "remote",
           "format": "binary",
-          "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/tiktok.mrs",
+          "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/tiktok.srs",
           "download_detour": "🎯 全球直连"
         },
         {
