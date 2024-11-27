@@ -327,6 +327,13 @@
     "route": {
       "rule_set": [
         {
+          "tag": "geosite-awavenue",
+          "type": "remote",
+          "format": "binary",
+          "url": "https://github.com/TG-Twilight/AWAvenue-Ads-Rule/raw/refs/heads/main/Filters/AWAvenue-Ads-Rule-Singbox.srs",
+          "download_detour": "🚀 节点选择"
+        }, 
+        {
           "tag": "geosite-dnsblock",
           "type": "remote",
           "format": "binary",
@@ -605,6 +612,10 @@
       "disable_expire": false,
       "independent_cache": false,
       "rules": [
+        {
+          "rule_set": "awavenue",
+          "server": "block"
+        },  
         {
           "rule_set": "geosite-dnsblock",
           "server": "block"
