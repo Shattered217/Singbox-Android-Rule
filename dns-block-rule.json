@@ -613,7 +613,7 @@
       "independent_cache": false,
       "rules": [
         {
-          "rule_set": "awavenue",
+          "rule_set": "geosite-awavenue",
           "server": "block"
         },  
         {
