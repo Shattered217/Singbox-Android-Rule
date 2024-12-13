@@ -33,7 +33,7 @@
             "server_port": 8080
           }
         },
-        "domain_strategy": "prefer_ipv4",
+        "domain_strategy": "ipv4_only",
         "sniff": true
       }
     ],
@@ -635,6 +635,6 @@
         "inet6_range": "fc00::/18"
       },
       "final": "remote-dns",
-      "strategy": "prefer_ipv4"
+      "strategy": "ipv4_only"
     }
   }
