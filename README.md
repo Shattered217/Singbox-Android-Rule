@@ -13,7 +13,7 @@ https://sb-sub.shattered.top/config/https://xxxxxxsubscribe?token=123456&file=ht
 
 https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt
 
-https://raw.githubusercontent.com/easylist/easylistchina/master/easylistchina.txt
+https://big.oisd.nl
 
 每天自动更新合并，
 项目fork自https://github.com/tmby/sing-box-dns-filter
