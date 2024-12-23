@@ -25,16 +25,13 @@
           "192.168.0.0/16",
           "fc00::/7"
         ],
-        "udp_timeout": "5m",
         "stack": "mixed",
         "platform": {
           "http_proxy": {
             "server": "127.0.0.1",
             "server_port": 8080
           }
-        },
-        "domain_strategy": "ipv4_only",
-        "sniff": true
+        }
       }
     ],
     "outbounds": [
@@ -314,14 +311,6 @@
       {
         "type": "direct",
         "tag": "direct"
-      },
-      {
-        "type": "dns",
-        "tag": "dns-out"
-      },
-      {
-        "type": "block",
-        "tag": "block"
       }
     ],
     "route": {
@@ -469,75 +458,100 @@
       ],
       "rules": [
         {
-          "protocol": "dns",
-          "port": 53,
-          "outbound": "dns-out"
+          "action": "sniff",
+          "sniffer": ["http", "tls", "quic"]
         },
         {
+          "action": "reject",
+          "outbound": "block"
+          
+        },
+        {
+          "action": "hijack-dns",
+          "protocol": "dns"         
+        },
+        {
+          "action": "route",
           "clash_mode": "direct",
           "outbound": "direct"
         },
         {
+          "action": "route",
           "clash_mode": "global",
           "outbound": "GLOBAL"
         },
         {
+          "action": "route",
           "rule_set": "fcm",
           "outbound": "📢 谷歌FCM"
         },
         {
+          "action": "route",
           "rule_set": "speedtest",
           "outbound": "⚡ Speedtest"
         },
         {
+          "action": "route",
           "rule_set": "chatgpt",
           "outbound": "🤖 ChatGPT"
         },
         {
+          "action": "route",
           "rule_set": "github",
           "outbound": "👩‍💻 Github"
         },
         {
+          "action": "route",
           "rule_set": "pornhub",
           "outbound": "🥵 Pornhub"
         },
         {
+          "action": "route",
           "rule_set": "bilibili",
           "outbound": "📺 Bilibili"
         },
         {
+          "action": "route",
           "rule_set": "tiktok",
           "outbound": "🎶 TikTok"
         },
         {
+          "action": "route",
           "rule_set": ["netflix-site", "netflix-ip"],
           "outbound": "📺 Netflix"
         },
         {
+          "action": "route",
           "rule_set": "youtube",
           "outbound": "📺 YouTube"
         },
         {
+          "action": "route",
           "rule_set": "spotify",
           "outbound": "🎵 Spotify"
         },
         {
+          "action": "route",
           "rule_set": ["telegram-site", "telegram-ip"],
           "outbound": "📲 Telegram"
         },
         {
+          "action": "route",
           "rule_set": "bing",
           "outbound": "Ⓜ️ Bing"
         },
         {
+          "action": "route",
           "rule_set": "onedrive",
           "outbound": "Ⓜ️ Onedrive"
         },
         {
+          "action": "route",
           "rule_set": "microsoft",
           "outbound": "Ⓜ️ 微软服务"
         },
         {
+          "action": "route",
           "rule_set": "steam",
           "outbound": "🎮 Steam"
         },
@@ -546,14 +560,17 @@
           "outbound": "🎯 全球直连"
         },
         {
+          "action": "route",
           "rule_set": "GEOIP-CN",
           "outbound": "🎯 全球直连"
         },
         {
+          "action": "route",
           "rule_set": "GEOSITE-CN",
           "outbound": "🎯 全球直连"
         },
         {
+          "action": "route",
           "rule_set": "GEOLOCATION-!CN",
           "outbound": "🚀 节点选择"
         }
@@ -599,23 +616,28 @@
       "independent_cache": false,
       "rules": [
         {
+          "action": "resolve",
           "outbound": "any",
           "disable_cache": true,
           "server": "local-dns"
         },
         {
+          "action": "resolve",
           "clash_mode": "direct",
           "server": "local-dns"
         },
         {
+          "action": "resolve",
           "clash_mode": "global",
           "server": "remote-dns"
         },
         {
+          "action": "resolve",
           "rule_set": "GEOSITE-CN",
           "server": "local-dns"
         },
         {
+          "action": "resolve",
           "rule_set":  [
             "youtube",
             "telegram-site",
@@ -635,6 +657,6 @@
         "inet6_range": "fc00::/18"
       },
       "final": "remote-dns",
-      "strategy": "ipv4_only"
+      "strategy": "prefer_ipv4"
     }
   }
