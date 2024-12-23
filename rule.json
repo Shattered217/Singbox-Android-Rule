@@ -462,8 +462,16 @@
       ],
       "rules": [
         {
+          "inbound": "tun-auto",
           "action": "sniff",
-          "sniffer": ["http", "tls", "quic"]
+          "sniffer": [
+            "dns",
+            "bittorrent",
+            "http",
+            "tls",
+            "quic",
+            "dtls"
+          ]
         },
         {
           "action": "reject",
@@ -622,12 +630,6 @@
       "rules": [
         {
           "action": "route",
-          "outbound": "any",
-          "disable_cache": true,
-          "server": "local-dns"
-        },
-        {
-          "action": "route",
           "clash_mode": "direct",
           "server": "local-dns"
         },
@@ -655,7 +657,7 @@
           ],
           "server": "remote-dns"
         }
-      ],
+      ], 
       "fakeip": {
         "enabled": true,
         "inet4_range": "198.18.0.1/16",
