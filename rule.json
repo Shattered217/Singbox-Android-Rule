@@ -311,6 +311,10 @@
       {
         "type": "direct",
         "tag": "direct"
+      },
+      {
+        "type": "block",
+        "tag": "block"
       }
     ],
     "route": {
@@ -556,6 +560,7 @@
           "outbound": "🎮 Steam"
         },
         {
+          "action": "route",
           "ip_is_private": true,
           "outbound": "🎯 全球直连"
         },
