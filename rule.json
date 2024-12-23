@@ -76,17 +76,6 @@
       ]
       },
       {
-        "tag": "🔗 ProxyDNS",
-        "type": "selector",
-        "outbounds": [
-          "🎯 全球直连",
-          "♻️ 自动选择",
-          "✈️ 手动选择",
-          "🛩️ 手动选择备用",
-          "🚁 自建节点"
-        ]
-      },
-      {
         "tag": "⚡ Speedtest",
         "type": "selector",
         "outbounds": [
@@ -577,7 +566,7 @@
           "tag": "remote-dns",
           "address": "https://1.1.1.1/dns-query",
           "address_resolver": "remote-resolver-dns",
-          "detour": "🔗 ProxyDNS"
+          "detour": "🚀 节点选择"
         },
         {
           "tag": "local-dns",
@@ -593,7 +582,7 @@
         {
           "tag": "remote-resolver-dns",
           "address": "8.8.8.8",
-          "detour": "🔗 ProxyDNS"
+          "detour": "🚀 节点选择"
         },
         {
           "tag": "fakeip-dns",
