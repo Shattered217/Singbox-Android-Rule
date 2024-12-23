@@ -275,15 +275,6 @@
         "tag": "🎯 全球直连",
         "type": "selector",
         "outbounds": [
-          "direct",
-          "block"
-        ]
-      },
-      {
-        "tag": "🛑 全球拦截",
-        "type": "selector",
-        "outbounds": [
-          "block",
           "direct"
         ]
       },
@@ -300,7 +291,6 @@
         "type": "selector",
         "outbounds": [
           "direct",
-          "block",
           "🚀 节点选择",
           "♻️ 自动选择",
           "🎯 全球直连",
@@ -311,10 +301,6 @@
       {
         "type": "direct",
         "tag": "direct"
-      },
-      {
-        "type": "block",
-        "tag": "block"
       }
     ],
     "route": {
@@ -472,11 +458,6 @@
             "quic",
             "dtls"
           ]
-        },
-        {
-          "action": "reject",
-          "outbound": "block"
-          
         },
         {
           "action": "hijack-dns",
