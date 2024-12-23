@@ -616,28 +616,28 @@
       "independent_cache": false,
       "rules": [
         {
-          "action": "resolve",
+          "action": "route",
           "outbound": "any",
           "disable_cache": true,
           "server": "local-dns"
         },
         {
-          "action": "resolve",
+          "action": "route",
           "clash_mode": "direct",
           "server": "local-dns"
         },
         {
-          "action": "resolve",
+          "action": "route",
           "clash_mode": "global",
           "server": "remote-dns"
         },
         {
-          "action": "resolve",
+          "action": "route",
           "rule_set": "GEOSITE-CN",
           "server": "local-dns"
         },
         {
-          "action": "resolve",
+          "action": "route",
           "rule_set":  [
             "youtube",
             "telegram-site",
