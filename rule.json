@@ -562,7 +562,6 @@
     },
     "dns": {
       "servers": [
-        "servers": [
         {
           "tag": "remote-dns",
           "address": "https://doh.18bit.cn/dns-query",
