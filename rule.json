@@ -582,7 +582,7 @@
         {
           "tag": "remote-resolver-dns",
           "address": "8.8.8.8",
-          "detour": "🚀 节点选择"
+          "detour": "🎯 全球直连"
         },
         {
           "tag": "fakeip-dns",
