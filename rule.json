@@ -8,8 +8,7 @@
         "type": "tun",
         "tag": "tun-auto",
         "address": [
-          "172.18.0.1/30",
-          "fdfe:dcba:9876::1/126"
+          "172.18.0.1/30"
         ],
         "auto_route": true,
         "strict_route": true,
@@ -582,7 +581,7 @@
         },
         {
           "tag": "remote-resolver-dns",
-          "address": "https://223.5.5.5/dns-query",
+          "address": "8.8.8.8",
           "detour": "🎯 全球直连"
         },
         {
@@ -630,10 +629,9 @@
       ], 
       "fakeip": {
         "enabled": true,
-        "inet4_range": "198.18.0.1/16",
-        "inet6_range": "fc00::/18"
+        "inet4_range": "198.18.0.1/16"
       },
       "final": "remote-dns",
-      "strategy": "prefer_ipv4"
+      "strategy": "ipv4_only"
     }
   }
