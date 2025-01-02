@@ -24,7 +24,7 @@
           "192.168.0.0/16",
           "fc00::/7"
         ],
-        "stack": "mixed",
+        "stack": "system",
         "platform": {
           "http_proxy": {
             "server": "127.0.0.1",
@@ -557,7 +557,8 @@
         }
       ],
       "final": "🐟 漏网之鱼",
-      "auto_detect_interface": true
+      "auto_detect_interface": true,
+      "override_android_vpn": true
     },
     "dns": {
       "servers": [
