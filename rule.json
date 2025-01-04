@@ -98,6 +98,22 @@
       ]
       },
       {
+        "tag": "🇬🇧 GiffGaff",
+        "type": "selector",
+        "outbounds": [
+          "🎯 全球直连",
+          "{all}"
+        ],
+        "filter": [
+        {
+          "action": "include",
+          "keywords": [
+            "英|UK"
+          ]
+        }
+      ]
+      },
+      {
         "tag": "📢 谷歌FCM",
         "type": "selector",
         "outbounds": [
@@ -459,6 +475,13 @@
           "action": "route",
           "clash_mode": "global",
           "outbound": "GLOBAL"
+        },
+        {
+          "action": "route",
+          "ip_cidr": [
+            "87.194.0.0/16"
+          ],
+          "outbound": "🇬🇧 GiffGaff"
         },
         {
           "action": "route",
