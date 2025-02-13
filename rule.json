@@ -581,36 +581,45 @@
       ],
       "final": "🐟 漏网之鱼",
       "auto_detect_interface": true,
-      "override_android_vpn": true
+      "override_android_vpn": true,
+      "default_domain_resolver": {
+      "server": "local",
+      "rewrite_tll": 60,
+      "client_subnet": "1.1.1.1"
+      }
     },
     "dns": {
       "servers": [
         {
           "tag": "remote-dns",
-          "address": "https://223.5.5.5/dns-query",
+          "type": "https",
+          "server": "223.5.5.5",
           "address_resolver": "remote-resolver-dns",
-          "client_subnet": "1.0.1.0",
           "detour": "🎯 全球直连"
         },
         {
           "tag": "local-dns",
-          "address": "https://223.5.5.5/dns-query",
+          "type": "https",
+          "server": "223.5.5.5",
           "address_resolver": "resolver-dns",
           "detour": "🎯 全球直连"
         },
         {
           "tag": "resolver-dns",
-          "address": "223.5.5.5",
+          "type": "udp",
+        "server": "223.5.5.5",
           "detour": "🎯 全球直连"
         },
         {
           "tag": "remote-resolver-dns",
-          "address": "8.8.8.8",
+          "type": "udp",
+          "server": "1.1.1.1",
           "detour": "🎯 全球直连"
         },
         {
           "tag": "fakeip-dns",
-          "address": "fakeip"
+          "type": "fakeip",
+          "inet4_range": "198.18.0.0/15"
         },
         {
           "tag": "block",
@@ -629,7 +638,8 @@
         {
           "action": "route",
           "clash_mode": "global",
-          "server": "remote-dns"
+          "server": "remote-dns",
+          "client_subnet": "1.0.1.0"
         },
         {
           "action": "route",
@@ -648,13 +658,10 @@
             "pornhub",
             "GEOLOCATION-!CN"
           ],
-          "server": "remote-dns"
+          "server": "remote-dns",
+          "client_subnet": "1.0.1.0"
         }
       ], 
-      "fakeip": {
-        "enabled": true,
-        "inet4_range": "198.18.0.1/16"
-      },
       "final": "remote-dns",
       "strategy": "ipv4_only"
     }
