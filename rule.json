@@ -594,14 +594,12 @@
           "tag": "remote-dns",
           "type": "https",
           "server": "223.5.5.5",
-          "address_resolver": "remote-resolver-dns",
           "detour": "🎯 全球直连"
         },
         {
           "tag": "local-dns",
           "type": "https",
           "server": "223.5.5.5",
-          "address_resolver": "resolver-dns",
           "detour": "🎯 全球直连"
         },
         {
