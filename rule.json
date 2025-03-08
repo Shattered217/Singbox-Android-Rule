@@ -593,35 +593,27 @@
         {
           "tag": "remote-dns",
           "type": "https",
-          "server": "223.5.5.5",
-          "detour": "🎯 全球直连"
+          "server": "8.8.8.8"
         },
         {
           "tag": "local-dns",
           "type": "https",
-          "server": "223.5.5.5",
-          "detour": "🎯 全球直连"
+          "server": "223.5.5.5"
         },
         {
           "tag": "resolver-dns",
           "type": "udp",
-        "server": "223.5.5.5",
-          "detour": "🎯 全球直连"
+          "server": "223.5.5.5"
         },
         {
           "tag": "remote-resolver-dns",
           "type": "udp",
-          "server": "1.1.1.1",
-          "detour": "🎯 全球直连"
+          "server": "1.1.1.1"
         },
         {
           "tag": "fakeip-dns",
           "type": "fakeip",
           "inet4_range": "198.18.0.0/15"
-        },
-        {
-          "tag": "block",
-          "address": "rcode://success"
         }
       ],
       "disable_cache": false,
@@ -637,7 +629,7 @@
           "action": "route",
           "clash_mode": "global",
           "server": "remote-dns",
-          "client_subnet": "1.0.1.0"
+          "client_subnet": "1.1.1.1"
         },
         {
           "action": "route",
@@ -657,7 +649,7 @@
             "GEOLOCATION-!CN"
           ],
           "server": "remote-dns",
-          "client_subnet": "1.0.1.0"
+          "client_subnet": "1.1.1.1"
         }
       ], 
       "final": "remote-dns",
