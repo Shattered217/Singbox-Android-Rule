@@ -3,25 +3,13 @@
       "level": "info",
       "timestamp": true
     },
-    "endpoints": [
-      {
-        "type": "tailscale",
-        "tag": "ts-ep",
-        "control_url": "https://tai.copur.xyz",
-        "ephemeral": false,
-        "hostname": "Singbox",
-        "exit_node": "unraid-bujykd4r",
-        "exit_node_allow_lan_access": true,
-        "advertise_exit_node": false,
-        "udp_timeout": "5m"
-      }
-    ],
     "inbounds": [
       {
         "type": "tun",
         "tag": "tun-auto",
         "address": [
-          "172.18.0.1/30"
+          "172.18.0.1/30",
+          "fdfe:dcba:9876::1/126"
         ],
         "auto_route": true,
         "strict_route": true,
@@ -37,13 +25,16 @@
           "192.168.0.0/16",
           "fc00::/7"
         ],
-        "stack": "system",
+        "udp_timeout": "5m",
+        "stack": "mixed",
         "platform": {
           "http_proxy": {
             "server": "127.0.0.1",
             "server_port": 8080
           }
-        }
+        },
+        "domain_strategy": "ipv4_only",
+        "sniff": true
       }
     ],
     "outbounds": [
@@ -88,6 +79,17 @@
       ]
       },
       {
+        "tag": "🔗 ProxyDNS",
+        "type": "selector",
+        "outbounds": [
+          "🎯 全球直连",
+          "♻️ 自动选择",
+          "✈️ 手动选择",
+          "🛩️ 手动选择备用",
+          "🚁 自建节点"
+        ]
+      },
+      {
         "tag": "⚡ Speedtest",
         "type": "selector",
         "outbounds": [
@@ -106,22 +108,6 @@
           "action": "include",
           "keywords": [
             "^(?!(.*尼日)).*(美|日|JP|US|Chat|jp|us).*"
-          ]
-        }
-      ]
-      },
-      {
-        "tag": "🇬🇧 GiffGaff",
-        "type": "selector",
-        "outbounds": [
-          "🎯 全球直连",
-          "{all}"
-        ],
-        "filter": [
-        {
-          "action": "include",
-          "keywords": [
-            "英|UK"
           ]
         }
       ]
@@ -279,14 +265,6 @@
         ]
       },
       {
-        "tag": "👨‍💻 Home",
-        "type": "selector",
-        "outbounds": [
-          "🎯 全球直连",
-          "ts-ep"
-        ]
-      },
-      {
         "tag": "♻️ 自动选择",
         "type": "urltest",
         "outbounds": [
@@ -300,6 +278,15 @@
         "tag": "🎯 全球直连",
         "type": "selector",
         "outbounds": [
+          "direct",
+          "block"
+        ]
+      },
+      {
+        "tag": "🛑 全球拦截",
+        "type": "selector",
+        "outbounds": [
+          "block",
           "direct"
         ]
       },
@@ -316,19 +303,36 @@
         "type": "selector",
         "outbounds": [
           "direct",
+          "block",
           "🚀 节点选择",
           "♻️ 自动选择",
           "🎯 全球直连",
+          "🛑 全球拦截",
           "🐟 漏网之鱼"
         ]
       },
       {
         "type": "direct",
         "tag": "direct"
+      },
+      {
+        "type": "dns",
+        "tag": "dns-out"
+      },
+      {
+        "type": "block",
+        "tag": "block"
       }
     ],
     "route": {
       "rule_set": [
+        {
+          "tag": "geosite-dnsblock",
+          "type": "remote",
+          "format": "binary",
+          "url": "https://github.com/Shattered217/sing-box-dns-filter/raw/refs/heads/main/geosite-dnsblock.srs",
+          "download_detour": "🚀 节点选择"
+        },
         {
           "tag": "netflix-site",
           "type": "remote",
@@ -472,177 +476,129 @@
       ],
       "rules": [
         {
-          "inbound": "tun-auto",
-          "action": "sniff",
-          "sniffer": [
-            "dns",
-            "bittorrent",
-            "http",
-            "tls",
-            "quic",
-            "dtls"
-          ]
+          "protocol": "dns",
+          "port": 53,
+          "outbound": "dns-out"
         },
         {
-          "action": "hijack-dns",
-          "protocol": "dns"         
-        },
-        {
-          "action": "route",
           "clash_mode": "direct",
           "outbound": "direct"
         },
         {
-          "action": "route",
           "clash_mode": "global",
           "outbound": "GLOBAL"
         },
         {
-          "action": "route",
-          "ip_cidr": [
-            "192.168.101.1/24"
-          ],
-          "outbound": "👨‍💻 Home"
-        },
-        {
-          "action": "route",
-          "ip_cidr": [
-            "87.194.0.0/16"
-          ],
-          "outbound": "🇬🇧 GiffGaff"
-        },
-        {
-          "action": "route",
           "rule_set": "fcm",
           "outbound": "📢 谷歌FCM"
         },
         {
-          "action": "route",
           "rule_set": "speedtest",
           "outbound": "⚡ Speedtest"
         },
         {
-          "action": "route",
           "rule_set": "chatgpt",
           "outbound": "🤖 ChatGPT"
         },
         {
-          "action": "route",
           "rule_set": "github",
           "outbound": "👩‍💻 Github"
         },
         {
-          "action": "route",
           "rule_set": "pornhub",
           "outbound": "🥵 Pornhub"
         },
         {
-          "action": "route",
           "rule_set": "bilibili",
           "outbound": "📺 Bilibili"
         },
         {
-          "action": "route",
           "rule_set": "tiktok",
           "outbound": "🎶 TikTok"
         },
         {
-          "action": "route",
           "rule_set": ["netflix-site", "netflix-ip"],
           "outbound": "📺 Netflix"
         },
         {
-          "action": "route",
           "rule_set": "youtube",
           "outbound": "📺 YouTube"
         },
         {
-          "action": "route",
           "rule_set": "spotify",
           "outbound": "🎵 Spotify"
         },
         {
-          "action": "route",
           "rule_set": ["telegram-site", "telegram-ip"],
           "outbound": "📲 Telegram"
         },
         {
-          "action": "route",
           "rule_set": "bing",
           "outbound": "Ⓜ️ Bing"
         },
         {
-          "action": "route",
           "rule_set": "onedrive",
           "outbound": "Ⓜ️ Onedrive"
         },
         {
-          "action": "route",
           "rule_set": "microsoft",
           "outbound": "Ⓜ️ 微软服务"
         },
         {
-          "action": "route",
           "rule_set": "steam",
           "outbound": "🎮 Steam"
         },
         {
-          "action": "route",
           "ip_is_private": true,
           "outbound": "🎯 全球直连"
         },
         {
-          "action": "route",
           "rule_set": "GEOIP-CN",
           "outbound": "🎯 全球直连"
         },
         {
-          "action": "route",
           "rule_set": "GEOSITE-CN",
           "outbound": "🎯 全球直连"
         },
         {
-          "action": "route",
           "rule_set": "GEOLOCATION-!CN",
           "outbound": "🚀 节点选择"
         }
       ],
       "final": "🐟 漏网之鱼",
-      "auto_detect_interface": true,
-      "override_android_vpn": true,
-      "default_domain_resolver": {
-      "server": "local-dns",
-      "rewrite_tll": 60,
-      "client_subnet": "1.1.1.1"
-      }
+      "auto_detect_interface": true
     },
     "dns": {
       "servers": [
         {
           "tag": "remote-dns",
-          "type": "https",
-          "server": "8.8.8.8",
-          "detour": "🚀 节点选择"
+          "address": "https://1.1.1.1/dns-query",
+          "address_resolver": "remote-resolver-dns",
+          "detour": "🔗 ProxyDNS"
         },
         {
           "tag": "local-dns",
-          "type": "https",
-          "server": "223.5.5.5"
+          "address": "https://223.5.5.5/dns-query",
+          "address_resolver": "resolver-dns",
+          "detour": "🎯 全球直连"
         },
         {
           "tag": "resolver-dns",
-          "type": "udp",
-          "server": "223.5.5.5"
+          "address": "223.5.5.5",
+          "detour": "🎯 全球直连"
         },
         {
           "tag": "remote-resolver-dns",
-          "type": "udp",
-          "server": "1.1.1.1"
+          "address": "8.8.8.8",
+          "detour": "🔗 ProxyDNS"
         },
         {
           "tag": "fakeip-dns",
-          "type": "fakeip",
-          "inet4_range": "198.18.0.0/15"
+          "address": "fakeip"
+        },
+        {
+          "tag": "block",
+          "address": "rcode://success"
         }
       ],
       "disable_cache": false,
@@ -650,23 +606,27 @@
       "independent_cache": false,
       "rules": [
         {
-          "action": "route",
+          "rule_set": "geosite-dnsblock",
+          "server": "block"
+        },
+        {
+          "outbound": "any",
+          "disable_cache": true,
+          "server": "local-dns"
+        },
+        {
           "clash_mode": "direct",
           "server": "local-dns"
         },
         {
-          "action": "route",
           "clash_mode": "global",
-          "server": "remote-dns",
-          "client_subnet": "1.1.1.1"
+          "server": "remote-dns"
         },
         {
-          "action": "route",
           "rule_set": "GEOSITE-CN",
           "server": "local-dns"
         },
         {
-          "action": "route",
           "rule_set":  [
             "youtube",
             "telegram-site",
@@ -677,10 +637,14 @@
             "pornhub",
             "GEOLOCATION-!CN"
           ],
-          "server": "remote-dns",
-          "client_subnet": "1.1.1.1"
+          "server": "remote-dns"
         }
-      ], 
+      ],
+      "fakeip": {
+        "enabled": true,
+        "inet4_range": "198.18.0.1/16",
+        "inet6_range": "fc00::/18"
+      },
       "final": "remote-dns",
       "strategy": "ipv4_only"
     }
